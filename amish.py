@@ -69,3 +69,18 @@ plt.title('Pie Chart of C by A')
 plt.ylabel('C')
 plt.show()      
 a.to_csv('amish.csv', index=False)  # Save DataFrame to CSV
+import seaborn as sns
+sns.heatmap(a.corr(), annot=True, cmap='coolwarm')
+plt.title('Heatmap of Correlation Matrix')
+plt.show()
+import numpy as np
+a['D'] = np.random.rand(len(a))  # Add a new column with random
+a['E'] = np.random.randint(1, 10, size=len(a))  # Add another column with random integers
+print(a)
+print(a.describe())  # Describe the updated DataFrame
+print(a.info())  # Info of the updated DataFrame
+print(a.dtypes)  # Data types of the updated DataFrame
+print(a.shape)  # Shape of the updated DataFrame
+
+print(a.head())  # First few rows of the updated DataFrame
+print(a.tail())  # Last few rows of the updated DataFrame
