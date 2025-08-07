@@ -30,4 +30,42 @@ print(a.groupby('A').count())
 print(a.groupby('A').max())
 print(a.groupby('A').min())
 
-    
+from matplotlib import pyplot as plt
+a.plot(kind='bar', x='A', y='B')    
+plt.title('Bar Plot of B by A')
+plt.xlabel('A')
+plt.ylabel('B')     
+plt.show()
+a.plot(kind='line', x='A', y='C')
+plt.title('Line Plot of C by A')
+plt.xlabel('A')
+
+plt.ylabel('C')
+plt.show()
+a.plot(kind='scatter', x='A', y='B')
+plt.title('Scatter Plot of B by A')
+plt.xlabel('A')
+plt.ylabel('B')
+
+plt.show()
+a.plot(kind='hist', y='C', bins=5)
+plt.title('Histogram of C')
+plt.xlabel('C')
+plt.ylabel('Frequency')
+plt.show()  
+a.plot(kind='box')
+plt.title('Box Plot of DataFrame')
+plt.show()
+a.plot(kind='area', x='A', y='B')
+plt.title('Area Plot of B by A')
+plt.xlabel('A')
+plt.ylabel('B')
+plt.show()  
+
+a.plot(kind='pie', y='C', labels=a['A'], autopct='%1.1f%%')
+
+plt.title('Pie Chart of C by A')
+
+plt.ylabel('C')
+plt.show()      
+a.to_csv('amish.csv', index=False)  # Save DataFrame to CSV
